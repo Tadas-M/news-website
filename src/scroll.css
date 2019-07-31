@@ -1,0 +1,109 @@
+.is-visible.image-left-margins {
+    animation: 1s forwards ease-out slide-in-left;
+}
+.is-invisible.image-left-margins {
+    animation: 1s forwards ease-out slide-out-left;
+}
+.is-visible.image-right-margins {
+    animation: 1s forwards ease-out slide-in-right;
+}
+.is-invisible.image-right-margins {
+    animation: 1s forwards ease-out slide-out-right;
+}
+
+@keyframes slide-in-left {
+    from {
+        margin-left: 0;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5vw;
+        opacity: 1;
+    }
+}
+@keyframes slide-out-left {
+    from {
+        margin-left: 5vw;
+        opacity: 1;
+    }
+    to {
+        margin-left: 0;
+        opacity: 0;
+    }
+}
+@keyframes slide-in-right {
+    from {
+        margin-right: 0;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5vw;
+        opacity: 1;
+    }
+}
+@keyframes slide-out-right {
+    from {
+        margin-right: 5vw;
+        opacity: 1;
+    }
+    to {
+        margin-right: 0;
+        opacity: 0;
+    }
+}
+
+.picture-container {
+    height: 60vh;
+    width: 45vw;
+    background-size: cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position:center center;  /* Sets reference point to scale from */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.25), 0 15px 20px rgba(0,0,0,0.22);
+}
+.image-left-margins {
+    margin: 10vh 0 auto 0;
+}
+.image-right-margins {
+    margin: 10vh 0 auto 0;
+}
+.text-left-margins {
+    margin: 15vh 0 auto 0;
+}
+.text-right-margins {
+    margin: 15vh 0 auto 0;
+}
+.text-container {
+    position:relative;
+    color: #000000;
+    padding: 6vh 1vw;
+    /*border: 3px ridge #ffffff;*/
+    height: 45vh;
+    width: 40vw;
+}
+#overlay-1 {
+    background-image: url("https://i.imgur.com/0bUMYUh.jpg");
+}
+#overlay-2 {
+    background-image: url("https://i.imgur.com/8StQCfB.jpg");
+}
+#overlay-3 {
+    background-image: url("https://i.imgur.com/AylsER1.jpg");
+}
+#background-1 {
+    background: url("https://media.giphy.com/media/L3u7tHhxLWtpBEajiy/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
+#background-3 {
+    background: url("https://media.giphy.com/media/gkQmM3ZNKVbmgWosjS/giphy.gif") no-repeat center center;
+    background-size: cover;
+}
+.outer-div {
+    display: flex;
+    justify-content: space-between;    /* horizontal alignment of grid tracks */
+    align-content: space-between;      /* vertical alignment of grid tracks */
+    width: 100%;
+    height: 90vh;
+}
+.news-content {
+
+}

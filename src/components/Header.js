@@ -1,5 +1,6 @@
 import React from 'react'
-import DropdownList from './DropDownList'
+import DropDownList from './DropDownList'
+import {Link} from "react-router-dom";
 
 function Header() {
     const europeCountriesList = {
@@ -29,20 +30,58 @@ function Header() {
         'Slovakia':	'SK',
         'Ukraine': 'UA'
     };
+    const nAmericaCountiesList = {
+        'United States': 'US',
+        'Canada': 'CA',
+        'Mexico': 'MX',
+        'Cuba': 'CU'
+    };
+    const sAmericaCountiesList = {
+        'Argentina': 'AR',
+        'Venezuela': 'VE',
+        'Brazil': 'BR',
+        'Colombia': 'CO'
+    };
+    const asiaCountiesList = {
+        'United Arab Emirates': 'AE',
+        'China': 'CN',
+        'Hong Kong': 'HK',
+        'Indonesia': 'ID',
+        'Israel': 'IL',
+        'India': 'IN',
+        'Japan': 'JP',
+        'South Korea': 'KR',
+        'Malaysia': 'MY',
+        'Philippines': 'PH',
+        'Saudi Arabia': 'SA',
+        'Singapore': 'SG',
+        'Thailand': 'TH',
+        'Turkey': 'TR',
+        'Taiwan': 'TW'
+    };
+    const africaCountiesList = {
+        'Egypt': 'EG',
+        'Morocco': 'MA',
+        'Nigeria': 'NG',
+        'South Africa': 'ZA'
+    };
+    const australiaCountiesList = {
+        'Australia': 'AU',
+        'New Zealand': 'NZ'
+    };
 
     return (
       <div>
-          <div className="countryTag">Top News</div>
-          <nav className="navbar navbar-expand-lg navbar-light justify-content-center">
-
-
-              {/*<li className="nav-item nav-link">*/}
-              {/*  <Link to="/lithuania">Example</Link>*/}
-              {/*</li>*/}
-
-              <DropdownList list={europeCountriesList}/>
-
-
+          <div className="page-title dark-background">
+              <Link to={`/`} className="title-text">World News</Link>
+          </div>
+          <nav className="navbar navbar-expand-lg justify-content-center dark-background">
+              <DropDownList list={europeCountriesList} listName={'Europe'}/>
+              <DropDownList list={nAmericaCountiesList} listName={'North America'}/>
+              <DropDownList list={sAmericaCountiesList} listName={'South America'}/>
+              <DropDownList list={africaCountiesList} listName={'Africa'}/>
+              <DropDownList list={asiaCountiesList} listName={'Asia'}/>
+              <DropDownList list={australiaCountiesList} listName={'Australia'}/>
           </nav>
       </div>
     )
