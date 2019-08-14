@@ -9,7 +9,7 @@ function NewsArticlesList ({ articles, logo, agency}) {
     return (
         <div>
             <img src={logo} alt={agency} className="agency-logo"/>
-            <div className="row-list">
+            <div className="row-list-item-4">
             {articles.map(article =>
                 <div className="row-list-item" key={article.title}>
                     <div className="">

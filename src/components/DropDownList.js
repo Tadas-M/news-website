@@ -9,7 +9,7 @@ const DropDownList = ({list, listName}) => {
     const listOfKeys = Object.keys(list);
 
     if (listOfKeys.length>0) {
-        return <div className="dropdown">
+        return <div className="dropdown volkorn">
                     <button className="dropbtn dark-background">{listName}</button>
                     <div className="dropdown-content">
                         {listOfKeys.map(item =>

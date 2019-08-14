@@ -1,39 +1,47 @@
 import React from 'react'
 import "../scroll.css"
+import wrap from "./IsInViewport";
 
 function SignificantEvents () {
     let elementsToShow;
-    let scroll = window.requestAnimationFrame ||
-        function (callback) { window.setTimeout( callback,1000/60)};
 
     document.addEventListener('DOMContentLoaded', function() {
         elementsToShow = document.querySelectorAll('.show-on-scroll');
-        // console.log(elementsToShow);
-        loop();
+        wrap(elementsToShow);
     }, false);
 
-    function loop() {
-        elementsToShow.forEach( function (element) {
-            if (isInViewport(element)) {
-                element.classList.add('is-visible');
-                element.classList.remove('is-invisible')
-            } else {
-                element.classList.remove('is-visible');
-                element.classList.add('is-invisible')
-            }
-        });
-        scroll(loop);
-    }
+    // let elementsToShow;
+    // let scroll = window.requestAnimationFrame ||
+    //     function (callback) { window.setTimeout( callback,1000/60)};
+    //
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     elementsToShow = document.querySelectorAll('.show-on-scroll');
+    //     loop();
+    // }, false);
+    //
+    // function loop() {
+    //     elementsToShow.forEach( function (element) {
+    //         if (isInViewport(element)) {
+    //             element.classList.add('is-visible');
+    //             element.classList.remove('is-invisible')
+    //         } else {
+    //             element.classList.remove('is-visible');
+    //             element.classList.add('is-invisible')
+    //         }
+    //     });
+    //     scroll(loop);
+    // }
+    //
+    // function  isInViewport (elem) {
+    //     let bounding = elem.getBoundingClientRect();
+    //     return (
+    //         bounding.top >= 0 &&
+    //         bounding.left >= 0 &&
+    //         bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    //         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    //     );
+    // }
 
-    function  isInViewport (elem) {
-        let bounding = elem.getBoundingClientRect();
-        return (
-            bounding.top >= 0 &&
-            bounding.left >= 0 &&
-            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
     return (
         <div>
             <div className="outer-div"> </div>

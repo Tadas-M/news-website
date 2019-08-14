@@ -2,6 +2,31 @@ import React from 'react'
 import DropDownList from './DropDownList'
 import {Link} from "react-router-dom";
 
+
+function NavigationBar( {items} ) {
+    // console.log(window.location.href);
+    return (
+        <nav className="navbar navbar-expand-lg justify-content-center dark-background header-border">
+            {items.map(item => {
+                return (
+                    <div className="news-category-container volkorn" key={item}>
+                        <Link to={`${item}`}>
+                            {item}
+                        </Link>
+                    </div>
+                )})}
+        </nav>
+    )
+}
+
+function CategoryNavigationBar () {
+    const categoriesApi = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"];
+    const categoriesRss = ["World", "Business", "Health", "Technology", "Sports"];
+
+    if (window.location.href.includes("country")) { return <NavigationBar items={categoriesApi}/> }
+    else { return <NavigationBar items={categoriesRss}/> }
+    }
+
 function Header() {
     const europeCountriesList = {
         'Austria': 'AT',
@@ -72,8 +97,8 @@ function Header() {
 
     return (
       <div>
-          <div className="page-title dark-background">
-              <Link to={`/`} className="title-text">World News</Link>
+          <div className="page-title dark-background volkorn">
+              <Link to={`/world`} className="title-text">World News</Link>
           </div>
           <nav className="navbar navbar-expand-lg justify-content-center dark-background">
               <DropDownList list={europeCountriesList} listName={'Europe'}/>
@@ -87,4 +112,4 @@ function Header() {
     )
 }
 
-export default Header
+export {Header, CategoryNavigationBar}

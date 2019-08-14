@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import newsApi from '../api';
 import "../styles.css"
+import {CategoryNavigationBar, Header} from "./Header";
+import {BrowserRouter as Router} from "react-router-dom";
 
+function RedirectToAll ({ match }) {
+    window.location = `/country/${match.params.id}/general`;
+}
 
 function CountryNews({ match }) {
     const [news, setNews] = useState([]);
@@ -33,7 +38,8 @@ function CountryNews({ match }) {
 
     useEffect( () => {
         const fetchData = async () => {
-            const result = await newsApi.get( `https://newsapi.org/v2/top-headlines?country=${match.params.id}` );
+            const category = match.params.category.toLowerCase();
+            const result = await newsApi.get( `https://newsapi.org/v2/top-headlines?country=${match.params.id}&category=${category}` );
             //console.log(result.data.articles);
             let dataArray = result.data.articles;
             extractNewsAgency(dataArray);
@@ -42,24 +48,29 @@ function CountryNews({ match }) {
             setNews(dataArray)
         };
         fetchData()
-    }, [match.params.id]);
-    
+    }, [match.params.id,match.params.category]);
+
+    // console.log(news)
     return (
         <div>
+            <CategoryNavigationBar />
             <div className="row-list-4">
             {news.map(article =>
-                    <div className="row-list-item" key={article.title}>
+                <div className="article-container" key={article.title}>
+                    <div className="row-list-item-4 volkorn">
                         <img src={article.urlToImage} alt={article.title} />
                         <div className="">
                             <p className="">{article.title}</p>
-                            <button className="source-button" onClick={() => openArticle(article.url)}>Full article</button>
+                            <button className="source-button" id="summary-text" onClick={() => openArticle(article.url)}>Full article</button>
+                            <p id="summary-text">{article.description}</p>
                         </div>
                         <div className="source">
                             <small className="">{article.agency}</small>
                         </div>
-                    </div>)}
+                    </div>
+                </div>)}
             </div>
         </div>
     )
 }
-export default CountryNews;
+export {CountryNews, RedirectToAll};

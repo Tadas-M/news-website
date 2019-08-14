@@ -1,27 +1,30 @@
 import React from 'react'
-
+import ArticleListItem from "./ArticleListItem";
+import "../ShowMoreButton.css"
 
 function NewsCategory ({ agency, articles }) {
 
-    const openArticle = (url) => {
-        window.open(url)
-    };
-
     return (
         <div>
-            <div className="header-text">BBC NEWS</div>
-            <div className="row-list-5">
-                {articles.map(article =>
-                    <div className="row-list-item" key={article.title}>
-                        <div className="">
-                            <p className="">{article.title}</p>
-                            <button className="source-button" onClick={() => openArticle(article.url)}>Full article</button>
-                        </div>
-                        <div className="source">
-                            <small className="">{agency}</small>
-                        </div>
-                    </div>)}
+            <div className="header-text">{agency}</div>
+            <input type="checkbox" className="read-more-state" id={agency}/>
+            <div className="row-list-5 read-more-wrap">
+                {articles.slice(0,5).map(
+                    article => <ArticleListItem
+                        article={article}
+                        key={article.guid}
+                    />
+                )}
+                {articles.slice(5).map(
+                    article => <ArticleListItem
+                        article={article}
+                        key={article.guid}
+                        hide={true}
+                    />
+                )}
             </div>
+            <label htmlFor={agency} className="read-more-trigger"></label>
+
         </div>)
 }
 
