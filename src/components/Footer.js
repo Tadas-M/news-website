@@ -9,7 +9,7 @@ function Footer() {
                 <a target="_blank" rel="noopener noreferrer" href="https://newsapi.org">News API</a>
             </div>
             <div>
-                Explore<br/>
+                <div className="footer-title">Explore<br/></div>
                 Home<br/>
                 2018<br/>
                 2017

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import newsApi from '../api';
 import "../styles.css"
-import {CategoryNavigationBar, Header} from "./Header";
-import {BrowserRouter as Router} from "react-router-dom";
+import {CategoryNavigationBar} from "./Header";
 
 function RedirectToAll ({ match }) {
     window.location = `/country/${match.params.id}/general`;
@@ -54,13 +53,13 @@ function CountryNews({ match }) {
     return (
         <div>
             <CategoryNavigationBar />
-            <div className="row-list-4">
+            <div className="row-list-4 block-margins">
             {news.map(article =>
                 <div className="article-container" key={article.title}>
                     <div className="row-list-item-4 volkorn">
                         <img src={article.urlToImage} alt={article.title} />
                         <div className="">
-                            <p className="">{article.title}</p>
+                            <p className="article-title">{article.title}</p>
                             <button className="source-button" id="summary-text" onClick={() => openArticle(article.url)}>Full article</button>
                             <p id="summary-text">{article.description}</p>
                         </div>

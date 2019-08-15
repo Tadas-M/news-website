@@ -5,7 +5,7 @@ import "../ShowMoreButton.css"
 function NewsCategory ({ agency, articles }) {
 
     return (
-        <div>
+        <div className="block-margins">
             <div className="header-text">{agency}</div>
             <input type="checkbox" className="read-more-state" id={agency}/>
             <div className="row-list-5 read-more-wrap">

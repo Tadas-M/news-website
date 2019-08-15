@@ -21,7 +21,7 @@ function NavigationBar( {items} ) {
 
 function CategoryNavigationBar () {
     const categoriesApi = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"];
-    const categoriesRss = ["World", "Business", "Health", "Technology", "Sports"];
+    const categoriesRss = ["World", "Business", "Health", "Technology", "Sport"];
 
     if (window.location.href.includes("country")) { return <NavigationBar items={categoriesApi}/> }
     else { return <NavigationBar items={categoriesRss}/> }

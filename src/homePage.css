@@ -12,8 +12,8 @@
     width: 16vw;
     background-size: cover;
 }
-#wsj-logo {
-    background: url("https://www.stickpng.com/assets/images/58482332cef1014c0b5e49be.png") no-repeat center center;
+#huffingtonPost-logo {
+    background: url("http://www.bteam.org/wp-content/uploads/2015/01/HuffPost-980x440-980x440.png") no-repeat center center;
     height: 17vh;
     width: 20vw;
     background-size: contain;
@@ -63,4 +63,7 @@
     margin-left: 0.2vw;
     color: black;
     display: block;
+}
+.block-margins {
+    margin: 0 200px;
 }

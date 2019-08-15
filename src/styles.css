@@ -96,7 +96,7 @@
 }
 .row-list-item-5:hover {
     height: auto;
-    max-width: 19.4vw;
+    max-width: 15.25vw;
     background-color: white;
     position: absolute;
     z-index: 2;
@@ -115,7 +115,7 @@
 }
 .row-list-item-4:hover {
     height: auto;
-    max-width: 24.4vw;
+    max-width: 19.25vw;
     background-color: white;
     position: absolute;
     z-index: 2;
@@ -175,6 +175,13 @@
 .news-category-container:hover::after {
     width: 100%;
 }
+.news-category-container a {
+    color: white;
+}
+.news-category-container:hover a {
+    color: white;
+    text-decoration: none;
+}
 .footer {
     height: 200px;
     display: grid;
@@ -211,6 +218,7 @@
     font-size: 18px;
 }
 .footer-title {
+    width: 100%;
     color: white;
 }
 .center-items {
