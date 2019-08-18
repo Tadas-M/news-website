@@ -14,7 +14,7 @@ function App() {
     return (
         <Router>
             <Header/>
-            <Route exact path="/news-website" component={RedirectToHomePage}/>
+            {/*<Route exact path="/news-website" component={RedirectToHomePage}/>*/}
             <Route exact path="/" component={RedirectToHomePage}/>
             <Route exact path="/:category" component={HomePage}/>
             <Route exact path="/country/:id" component={RedirectToAll}/>
