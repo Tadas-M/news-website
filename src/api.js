@@ -1,8 +1,10 @@
 import axios from 'axios'
 
+const key = process.env.REACT_APP_NEWS_API_KEY;
+
 let newsApi = axios.create({
     headers: {
-        'authorization': 'bd90520211e047be9a21b18a94bc970c'
+        'authorization': key.toString()
     }
 });
 

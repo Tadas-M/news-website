@@ -10,6 +10,7 @@
 }
 .read-more-state:checked ~ .read-more-wrap .read-more-target {
     opacity: 1;
+    /*display: block;*/
     font-size: inherit;
     max-height: 999em;
 }
@@ -32,4 +33,5 @@
     line-height: 2;
     border: 1px solid #6a6d6c;
     border-radius: .25em;
+    margin-left: .3em;
 }

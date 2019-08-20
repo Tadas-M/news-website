@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import newsApi from '../api';
-import "../styles.css"
 import {CategoryNavigationBar} from "./Header";
 
 function RedirectToAll ({ match }) {

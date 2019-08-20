@@ -1,5 +1,4 @@
 import React from 'react'
-import "../ShowMoreButton.css"
 
 function ArticleListItem({ article, hide=false }) {
 
@@ -47,7 +46,6 @@ function ArticleListItem({ article, hide=false }) {
             </div>
         </div>
     )
-    //TODO: ArticleListItem component
 }
 
 export default ArticleListItem

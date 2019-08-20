@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
-import "../scroll.css"
-import "../homePage.css"
 import NewsCategory from "./NewsCategory";
 import {CategoryNavigationBar} from "./Header";
 
@@ -10,40 +8,41 @@ function RedirectToHomePage () {
 }
 
 function HomePage ({ match }) {
+    const key = process.env.REACT_APP_RSS_2_JSON_KEY;
 
-    const bbcWorld = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fworld%2Frss.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const bbcBusiness = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fbusiness%2Frss.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const bbcHealth = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fhealth%2Frss.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const bbcTechnology = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Ftechnology%2Frss.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const bbcSport = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fsport%2Frss.xml%3Fedition%3Dint&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
+    const bbcWorld = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fworld%2Frss.xml&api_key=${key}`;
+    const bbcBusiness = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fbusiness%2Frss.xml&api_key=${key}`;
+    const bbcHealth = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fhealth%2Frss.xml&api_key=${key}`;
+    const bbcTechnology = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Ftechnology%2Frss.xml&api_key=${key}`;
+    const bbcSport = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fsport%2Frss.xml%3Fedition%3Dint&api_key=${key}`;
     const [bbcRssFeed, setBbcRssFeed] = useState([]);
 
-    const huffingtonPostWorld = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fworld-news%2Ffeed&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const huffingtonPostBusiness = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fbusiness%2Ffeed&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const huffingtonPostHealth = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fhealth%2Ffeed&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const huffingtonPostTechnology = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Ftechnology%2Ffeed&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const huffingtonPostSport = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fsports%2Ffeed&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
+    const huffingtonPostWorld = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fworld-news%2Ffeed&api_key=${key}`;
+    const huffingtonPostBusiness = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fbusiness%2Ffeed&api_key=${key}`;
+    const huffingtonPostHealth = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fhealth%2Ffeed&api_key=${key}`;
+    const huffingtonPostTechnology = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Ftechnology%2Ffeed&api_key=${key}`;
+    const huffingtonPostSport = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.huffpost.com%2Fsection%2Fsports%2Ffeed&api_key=${key}`;
     const [huffingtonPostFeed, setHuffingtonPostFeed] = useState([]);
 
-    const reutersWorld = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2FReuters%2FworldNews&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const reutersBusiness = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FbusinessNews&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const reutersHealth = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FhealthNews&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const reutersTechnology = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FtechnologyNews&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const reutersSport = 'https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FsportsNews&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
+    const reutersWorld = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2FReuters%2FworldNews&api_key=${key}`;
+    const reutersBusiness = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FbusinessNews&api_key=${key}`;
+    const reutersHealth = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FhealthNews&api_key=${key}`;
+    const reutersTechnology = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FtechnologyNews&api_key=${key}`;
+    const reutersSport = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FsportsNews&api_key=${key}`;
     const [reutersRssFeed, setReutersRssFeed] = useState([]);
 
-    const nyTimesWorld = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nytimes.com%2Fsvc%2Fcollections%2Fv1%2Fpublish%2Fhttps%3A%2Fwww.nytimes.com%2Fsection%2Fworld%2Frss.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const nyTimesBusiness = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FBusiness.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const nyTimesHealth = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FHealth.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const nyTimesTechnology = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FTechnology.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const nyTimesSport = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FSports.xml&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
+    const nyTimesWorld = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nytimes.com%2Fsvc%2Fcollections%2Fv1%2Fpublish%2Fhttps%3A%2Fwww.nytimes.com%2Fsection%2Fworld%2Frss.xml&api_key=${key}`;
+    const nyTimesBusiness = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FBusiness.xml&api_key=${key}`;
+    const nyTimesHealth = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FHealth.xml&api_key=${key}`;
+    const nyTimesTechnology = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FTechnology.xml&api_key=${key}`;
+    const nyTimesSport = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FSports.xml&api_key=${key}`;
     const [nyTimesRssFeed, setNyTimesRssFeed] = useState([]);
 
-    const theGuardianWorld = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2Frss&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const theGuardianBusiness = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fuk%2Fbusiness%2Frss&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const theGuardianHealth = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Flifeandstyle%2Fhealth-and-wellbeing%2Frss&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const theGuardianTechnology = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ftheguardian.com%2Fuk%2Ftechnology%2Frss&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
-    const theGuardianSport = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fuk%2Fsport%2Frss&api_key=ru7fgam374xlwf0kb83isibdfdjxddtf133ocfvt';
+    const theGuardianWorld = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2Frss&api_key=${key}`;
+    const theGuardianBusiness = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fuk%2Fbusiness%2Frss&api_key=${key}`;
+    const theGuardianHealth = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Flifeandstyle%2Fhealth-and-wellbeing%2Frss&api_key=${key}`;
+    const theGuardianTechnology = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ftheguardian.com%2Fuk%2Ftechnology%2Frss&api_key=${key}`;
+    const theGuardianSport = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Fuk%2Fsport%2Frss&api_key=${key}`;
     const [theGuardianRssFeed, setTheGuardianRssFeed] = useState([]);
 
     const worldNews = [bbcWorld, huffingtonPostWorld, reutersWorld, nyTimesWorld, theGuardianWorld];
@@ -95,8 +94,8 @@ function HomePage ({ match }) {
                 i++;
             })
         }
-        // getRssFeed(theGuardianNewsApi, setTheGuardianRssFeed);
     };
+
     useEffect( getAllRssFeeds, [match.params.category]);
     return (
         <div>
@@ -108,7 +107,7 @@ function HomePage ({ match }) {
                     </a>
                 </div>
                 <div className="image-container" id="huffingtonPost-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.wsj.com/news/world"}>
+                    <a target="_blank" rel="noopener noreferrer" href={"https://www.huffpost.com/"}>
                         Wall Street Journal logo that redirects to Wall Street Journal world news section
                     </a>
                 </div>
@@ -137,10 +136,8 @@ function HomePage ({ match }) {
             </div>
         </div>
     )
-    //TODO: Change news agencies logos to open their websites in the new window, not the current one.
     //TODO: Ability to retrieve other news categories
     //TODO: Properly format summary content from websites which put html tags in them
-    //TODO: News categories
 }
 
 export { HomePage, RedirectToHomePage };

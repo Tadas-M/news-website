@@ -1,6 +1,5 @@
 import React from 'react'
 import ArticleListItem from "./ArticleListItem";
-import "../ShowMoreButton.css"
 
 function NewsCategory ({ agency, articles }) {
 

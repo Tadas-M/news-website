@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function Footer() {
     return (
@@ -11,8 +12,9 @@ function Footer() {
             <div>
                 <div className="footer-title">Explore<br/></div>
                 Home<br/>
-                2018<br/>
-                2017
+                <Link to={"/events/2018"}>2018</Link><br/>
+                <Link to={"/events/2017"}>2017</Link><br/>
+
             </div>
             <div className="center-items">
                 <div className="footer-icon" id="github-logo">

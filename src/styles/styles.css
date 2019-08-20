@@ -150,6 +150,7 @@
 }
 .article-container {
     display: flex;
+    /*height: 90px;*/
 }
 .article-title {
     font-weight: bold;
