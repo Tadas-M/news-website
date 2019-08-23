@@ -14,3 +14,7 @@ you can choose between all topics that [News API](https://newsapi.org) provides.
 
 [News API](https://newsapi.org) for acquiring news information from wide range of countries.<br>
 [rrs2json](https://rss2json.com) for bypassing cors policy and converting data from rss to json format
+
+## Deployment
+
+Web app is deployed using [netlify](https://www.netlify.com)
