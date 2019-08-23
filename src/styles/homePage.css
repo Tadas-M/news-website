@@ -64,6 +64,11 @@
     color: black;
     display: block;
 }
-.block-margins {
-    margin: 0 200px;
+.block-margins-homepage {
+    width: 1000px;
+    margin: 0 auto;
+}
+.block-margins-country-news {
+    width: 1200px;
+    margin: 50px auto;
 }

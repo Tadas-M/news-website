@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5340e97c-6285-48ac-bff7-ff0927f6c4e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowMoreButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ShowMoreButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleListItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CountryNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CountryNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IsInViewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IsInViewport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewsCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignificantEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignificantEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/homePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scroll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/scroll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ShowMoreButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ShowMoreButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/homePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +138,8 @@
       <workItem from="1566054257237" duration="1932000" />
       <workItem from="1566117861840" duration="14777000" />
       <workItem from="1566230934799" duration="2385000" />
-      <workItem from="1566292961519" duration="2236000" />
+      <workItem from="1566292961519" duration="7254000" />
+      <workItem from="1566385779856" duration="4666000" />
     </task>
     <servers />
   </component>

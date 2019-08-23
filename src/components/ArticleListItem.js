@@ -39,7 +39,7 @@ function ArticleListItem({ article, hide=false }) {
     // console.log(description)
     return (
         <div className="article-container">
-            <div className="row-list-item-5 volkorn">
+            <div className="row-list-item-5 volkorn homepage-container-height">
                 <p className="article-title">{article.title}</p>
                 <p id="summary-text">{description}</p>
                 <button className="source-button" id="summary-text" onClick={() => openArticle(article.link)}>Full article</button>

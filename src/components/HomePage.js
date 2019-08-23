@@ -127,7 +127,7 @@ function HomePage ({ match }) {
                     </a>
                 </div>
             </div>
-            <div>
+            <div className="block-margins-homepage">
                 <NewsCategory agency={'BBC NEWS'} articles={bbcRssFeed}/>
                 <NewsCategory agency={'The Huffington Post'} articles={huffingtonPostFeed}/>
                 <NewsCategory agency={'Reuters'} articles={reutersRssFeed}/>

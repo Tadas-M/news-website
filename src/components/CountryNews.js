@@ -52,10 +52,10 @@ function CountryNews({ match }) {
     return (
         <div>
             <CategoryNavigationBar />
-            <div className="row-list-4 block-margins">
+            <div className="row-list-4 block-margins-country-news">
             {news.map(article =>
                 <div className="article-container" key={article.title}>
-                    <div className="row-list-item-4 volkorn">
+                    <div className="row-list-item-4 volkorn country-news-container-height">
                         <img src={article.urlToImage} alt={article.title} />
                         <div className="">
                             <p className="article-title">{article.title}</p>
