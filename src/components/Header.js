@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 
 function NavigationBar( {items} ) {
-    // console.log(window.location.href);
+
     return (
         <nav className="navbar navbar-expand-lg justify-content-center dark-background header-border">
             {items.map(item => {
@@ -98,7 +98,7 @@ function Header() {
     return (
       <div>
           <div className="page-title dark-background volkorn">
-              <Link to={`/world`} className="title-text">World News</Link>
+              <Link to={`/World`} className="title-text">World News</Link>
           </div>
           <nav className="navbar navbar-expand-lg justify-content-center dark-background">
               <DropDownList list={europeCountriesList} listName={'Europe'}/>

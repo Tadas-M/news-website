@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5340e97c-6285-48ac-bff7-ff0927f6c4e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ScrollToTop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CountryNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CountryNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DropDownList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropDownList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IsInViewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IsInViewport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignificantEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignificantEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ShowMoreButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ShowMoreButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/homePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -137,7 +154,19 @@
       <workItem from="1566230934799" duration="2385000" />
       <workItem from="1566292961519" duration="7254000" />
       <workItem from="1566385779856" duration="4666000" />
-      <workItem from="1566564957765" duration="3633000" />
+      <workItem from="1566564957765" duration="4233000" />
+      <workItem from="1567258054169" duration="1198000" />
+      <workItem from="1567354419902" duration="2176000" />
+      <workItem from="1567364914428" duration="1801000" />
+      <workItem from="1567430127319" duration="5580000" />
+      <workItem from="1567495243900" duration="1522000" />
+      <workItem from="1567520722907" duration="4485000" />
+      <workItem from="1567583052438" duration="1924000" />
+      <workItem from="1567678000143" duration="600000" />
+      <workItem from="1567706971190" duration="2967000" />
+      <workItem from="1567759061286" duration="270000" />
+      <workItem from="1567773710968" duration="10590000" />
+      <workItem from="1567793956669" duration="8505000" />
     </task>
     <servers />
   </component>

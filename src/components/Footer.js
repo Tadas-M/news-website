@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom";
 
 function Footer() {
+
     return (
         <div className="footer dark-background volkorn footer-text">
             <div>
@@ -11,7 +12,6 @@ function Footer() {
             </div>
             <div>
                 <div className="footer-title">Explore<br/></div>
-                Home<br/>
                 <Link to={"/events/2018"}>2018</Link><br/>
                 <Link to={"/events/2017"}>2017</Link><br/>
 

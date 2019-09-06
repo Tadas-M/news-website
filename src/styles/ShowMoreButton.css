@@ -1,7 +1,6 @@
 .read-more-state {
     display: none;
 }
-
 .read-more-target {
     opacity: 0;
     max-height: 0;

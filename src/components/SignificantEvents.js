@@ -12,7 +12,8 @@ function SignificantEvents () {
 
     return (
         <div>
-            <div className="outer-div"> </div>
+            {/*<div className="outer-div"> </div>*/}
+            <a name="top"></a>
             <div className="outer-div" id="background-1">
                 <div className="picture-container image-left-margins show-on-scroll" id="overlay-1"></div>
                 <div className="text-container text-right-margins">

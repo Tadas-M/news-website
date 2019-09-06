@@ -12,6 +12,7 @@
     "react-head": "^3.1.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-transition-group": "^4.2.2",
     "reactstrap": "^8.0.1",
     "shards-ui": "^2.1.2"
   },
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "state": "^0.2.0"
   }
 }

@@ -4,7 +4,7 @@ let scroll = window.requestAnimationFrame ||
 
 function wrap(elements) {
     const elementsToShow = elements;
-    loop()
+    loop();
     function loop() {
         elementsToShow.forEach( function (element) {
             if (isInViewport(element)) {

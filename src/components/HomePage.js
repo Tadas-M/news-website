@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import NewsCategory from "./NewsCategory";
-import {CategoryNavigationBar} from "./Header";
 
 function RedirectToHomePage () {
-    window.location = "/world";
+    window.location = "/World";
 }
 
 function HomePage ({ match }) {
+
     const key = process.env.REACT_APP_RSS_2_JSON_KEY;
 
     const bbcWorld = `https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Fworld%2Frss.xml&api_key=${key}`;
@@ -98,8 +98,8 @@ function HomePage ({ match }) {
 
     useEffect( getAllRssFeeds, [match.params.category]);
     return (
-        <div>
-            <CategoryNavigationBar />
+        <div className="homepage page">
+            {/*<CategoryNavigationBar />*/}
             <div className="outlet-container">
                 <div className="image-container" id="bbc-logo">
                     <a target="_blank" rel="noopener noreferrer" href={"https://www.bbc.com/news"}>
@@ -127,6 +127,7 @@ function HomePage ({ match }) {
                     </a>
                 </div>
             </div>
+            <div className="page-title volkorn text-black">{match.params.category}</div>
             <div className="block-margins-homepage">
                 <NewsCategory agency={'BBC NEWS'} articles={bbcRssFeed}/>
                 <NewsCategory agency={'The Huffington Post'} articles={huffingtonPostFeed}/>

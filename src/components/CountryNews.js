@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import newsApi from '../api';
-import {CategoryNavigationBar} from "./Header";
-
-function RedirectToAll ({ match }) {
-    window.location = `/country/${match.params.id}/general`;
-}
 
 function CountryNews({ match }) {
     const [news, setNews] = useState([]);
@@ -43,15 +38,18 @@ function CountryNews({ match }) {
             extractNewsAgency(dataArray);
             replaceNullImages(dataArray);
             dataArray.sort(sortStrings);
-            setNews(dataArray)
+            setNews(dataArray);
+            console.log("id",match.params.id);
+            console.log("category",match.params.category)
         };
         fetchData()
-    }, [match.params.id,match.params.category]);
+    }, [match.params.id]);
+    //"match.params.category" was taken out of input parameters, because it still always updates
 
-    // console.log(news)
     return (
-        <div>
-            <CategoryNavigationBar />
+        <div className="page">
+            <div className="page-title volkorn text-black">{match.params.category}</div>
+            {/*<CategoryNavigationBar />*/}
             <div className="row-list-4 block-margins-country-news">
             {news.map(article =>
                 <div className="article-container" key={article.title}>
@@ -71,4 +69,4 @@ function CountryNews({ match }) {
         </div>
     )
 }
-export {CountryNews, RedirectToAll};
+export {CountryNews};
