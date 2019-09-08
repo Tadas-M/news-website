@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import NewsCategory from "./NewsCategory";
+import Footer from "./Footer";
 
 function RedirectToHomePage () {
     window.location = "/World";
@@ -98,43 +99,46 @@ function HomePage ({ match }) {
 
     useEffect( getAllRssFeeds, [match.params.category]);
     return (
-        <div className="homepage page">
-            {/*<CategoryNavigationBar />*/}
-            <div className="outlet-container">
-                <div className="image-container" id="bbc-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.bbc.com/news"}>
-                        BBC logo that redirects to BBC news section
-                    </a>
+        <div>
+            <div className="homepage page">
+                {/*<CategoryNavigationBar />*/}
+                <div className="outlet-container">
+                    <div className="image-container" id="bbc-logo">
+                        <a target="_blank" rel="noopener noreferrer" href={"https://www.bbc.com/news"}>
+                            BBC logo that redirects to BBC news section
+                        </a>
+                    </div>
+                    <div className="image-container" id="huffingtonPost-logo">
+                        <a target="_blank" rel="noopener noreferrer" href={"https://www.huffpost.com/"}>
+                            Wall Street Journal logo that redirects to Wall Street Journal world news section
+                        </a>
+                    </div>
+                    <div className="image-container" id="reuters-logo">
+                        <a target="_blank" rel="noopener noreferrer" href={"https://www.reuters.com/"}>
+                            Reuters logo that redirects to Reuters website
+                        </a>
+                    </div>
+                    <div className="image-container" id="theGuardian-logo">
+                        <a target="_blank" rel="noopener noreferrer" href={"https://www.theguardian.com/world"}>
+                            The Guardian logo that redirects to The Guardian's world news section
+                        </a>
+                    </div>
+                    <div className="image-container" id="nyTimes-logo">
+                        <a target="_blank" rel="noopener noreferrer" href={"https://www.nytimes.com/"}>
+                            New York Times logo that redirects to New York Times website
+                        </a>
+                    </div>
                 </div>
-                <div className="image-container" id="huffingtonPost-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.huffpost.com/"}>
-                        Wall Street Journal logo that redirects to Wall Street Journal world news section
-                    </a>
-                </div>
-                <div className="image-container" id="reuters-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.reuters.com/"}>
-                        Reuters logo that redirects to Reuters website
-                    </a>
-                </div>
-                <div className="image-container" id="theGuardian-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.theguardian.com/world"}>
-                        The Guardian logo that redirects to The Guardian's world news section
-                    </a>
-                </div>
-                <div className="image-container" id="nyTimes-logo">
-                    <a target="_blank" rel="noopener noreferrer" href={"https://www.nytimes.com/"}>
-                        New York Times logo that redirects to New York Times website
-                    </a>
+                <div className="page-title volkorn text-black">{match.params.category}</div>
+                <div className="block-margins-homepage">
+                    <NewsCategory agency={'BBC NEWS'} articles={bbcRssFeed}/>
+                    <NewsCategory agency={'The Huffington Post'} articles={huffingtonPostFeed}/>
+                    <NewsCategory agency={'Reuters'} articles={reutersRssFeed}/>
+                    <NewsCategory agency={'The Guardian'} articles={theGuardianRssFeed}/>
+                    <NewsCategory agency={'New York Times'} articles={nyTimesRssFeed}/>
                 </div>
             </div>
-            <div className="page-title volkorn text-black">{match.params.category}</div>
-            <div className="block-margins-homepage">
-                <NewsCategory agency={'BBC NEWS'} articles={bbcRssFeed}/>
-                <NewsCategory agency={'The Huffington Post'} articles={huffingtonPostFeed}/>
-                <NewsCategory agency={'Reuters'} articles={reutersRssFeed}/>
-                <NewsCategory agency={'The Guardian'} articles={theGuardianRssFeed}/>
-                <NewsCategory agency={'New York Times'} articles={nyTimesRssFeed}/>
-            </div>
+            <Footer type={"unhidden"}/>
         </div>
     )
     //TODO: Ability to retrieve other news categories

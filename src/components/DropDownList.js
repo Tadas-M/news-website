@@ -2,23 +2,6 @@ import React from 'react'
 import {Link} from "react-router-dom";
 
 const ListItem = ({item, id}) => {
-    function addAnimationClass () {
-        const content = document.getElementsByClassName("homepage");
-        console.log("content", content);
-        if(content[0] != null) {
-            content[0].classList.remove("fade-in");
-            content[0].classList.add("fade-out");
-        }
-    }
-
-    // function stopReload (e, id) {
-    //     e.preventDefault();
-    //     window.history.pushState("object or string", "Country news", `/country/${id}`)
-    //     addAnimationClass()
-    // }
-
-
-    // return <Link to={`/country/${id}`} onClick={e => stopReload(e,id)}>{item}</Link>
     return <Link to={`/country/${id}/General`}>{item}</Link>
 };
 

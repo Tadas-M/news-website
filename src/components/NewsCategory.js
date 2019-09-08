@@ -23,7 +23,6 @@ function NewsCategory ({ agency, articles }) {
                 )}
             </div>
             <label htmlFor={agency} className="read-more-trigger"></label>
-
         </div>)
 }
 

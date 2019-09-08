@@ -72,19 +72,11 @@
     width: 1200px;
     margin: auto;
 }
-
-/*.fade-in {*/
-/*    animation: 0.2s forwards ease-in-out appear;*/
-/*}*/
-/*.fade-out {*/
-/*    animation: 0.2s forwards ease-in-out disappear;*/
-/*}*/
-
 .page {
-    position: absolute;
-    top: 165px;
-    left: 0;
-    right: 0;
+    position: relative;
+    min-height: 100%;
+    height: auto;
+    opacity: 1;
 }
 
 .fade-appear,

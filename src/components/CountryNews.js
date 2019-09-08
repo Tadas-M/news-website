@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import newsApi from '../api';
+import axios from "axios";
+import Footer from "./Footer";
+
 
 function CountryNews({ match }) {
     const [news, setNews] = useState([]);
+    let count = 0;
+    let type;
+    function revealContent () {
+        const hidden = document.getElementById("hide");
+        const content = document.getElementById("country-content");
+        hidden.classList.remove("empty-div");
+        content.classList.add("page");
+        content.classList.remove("hidden-content")
+    }
 
     function sortStrings( a, b )  {
         if ( a.agency < b.agency) return -1;
@@ -30,42 +42,67 @@ function CountryNews({ match }) {
     };
 
     useEffect( () => {
+        const CancelToken = axios.CancelToken;
+        const source = CancelToken.source();
+        const category = match.params.category.toLowerCase();
+        const api_url = `https://newsapi.org/v2/top-headlines?country=${match.params.id}&category=${category}`;
         const fetchData = async () => {
-            const category = match.params.category.toLowerCase();
-            const result = await newsApi.get( `https://newsapi.org/v2/top-headlines?country=${match.params.id}&category=${category}` );
-            //console.log(result.data.articles);
-            let dataArray = result.data.articles;
-            extractNewsAgency(dataArray);
-            replaceNullImages(dataArray);
-            dataArray.sort(sortStrings);
-            setNews(dataArray);
-            console.log("id",match.params.id);
-            console.log("category",match.params.category)
+            try {
+                const result = await newsApi.get(api_url, {cancelToken: source.token});
+                //console.log(result.data.articles);
+                let dataArray = result.data.articles;
+                extractNewsAgency(dataArray);
+                replaceNullImages(dataArray);
+                dataArray.sort(sortStrings);
+                setNews(dataArray);
+            }
+            catch (e) {
+                if (axios.isCancel(e)) {
+                    console.log("cancelled");
+                }
+                else {
+                    throw e;
+                }
+            }
         };
-        fetchData()
-    }, [match.params.id]);
-    //"match.params.category" was taken out of input parameters, because it still always updates
+        fetchData();
+        return () => {
+            source.cancel();
+        }
+    }, [match.params.id,match.params.category]);
+    // console.log(news.length)
+
+    if (news.length < 9) {type = "hidden"}
+    else {type = "unhidden"}
+
 
     return (
-        <div className="page">
-            <div className="page-title volkorn text-black">{match.params.category}</div>
-            {/*<CategoryNavigationBar />*/}
-            <div className="row-list-4 block-margins-country-news">
-            {news.map(article =>
-                <div className="article-container" key={article.title}>
-                    <div className="row-list-item-4 volkorn country-news-container-height">
-                        <img src={article.urlToImage} alt={article.title} />
-                        <div className="">
-                            <p className="article-title">{article.title}</p>
-                            <button className="source-button" id="summary-text" onClick={() => openArticle(article.url)}>Full article</button>
-                            <p id="summary-text">{article.description}</p>
+        <div>
+            <div className="empty-div" id="hide"> </div>
+            <div className="hidden-content" id="country-content">
+                <div className="page-title volkorn text-black">{match.params.category}</div>
+                {/*<CategoryNavigationBar />*/}
+                <div className="row-list-4 block-margins-country-news">
+                {news.map(article => {
+                    if (count === news.length-2) {revealContent()} //Loads content when it's ready. Did this because of footer being displaced
+                    count++;
+
+                    return (<div className="article-container" key={article.title}>
+                        <div className="row-list-item-4 volkorn country-news-container-height">
+                            <img src={article.urlToImage} alt={article.title} />
+                            <div className="">
+                                <p className="article-title">{article.title}</p>
+                                <button className="source-button" id="summary-text" onClick={() => openArticle(article.url)}>Full article</button>
+                                <p id="summary-text">{article.description}</p>
+                            </div>
+                            <div className="source">
+                                <small className="">{article.agency}</small>
+                            </div>
                         </div>
-                        <div className="source">
-                            <small className="">{article.agency}</small>
-                        </div>
-                    </div>
-                </div>)}
+                    </div>)})}
+                </div>
             </div>
+            <Footer type={type}/>
         </div>
     )
 }

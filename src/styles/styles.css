@@ -93,10 +93,12 @@
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin: 0.2vw;
     width: 100%;
+    /*max-height: 100px;*/
+
 }
 .row-list-item-5:hover {
     position: absolute;
-    height: auto;
+    /*height: auto;*/
     max-width: 195px;
     background-color: white;
     z-index: 2;
@@ -163,7 +165,6 @@
 .news-category-container {
     margin: 0 6px;
     color: white;
-    /*border-bottom: 2px solid transparent;*/
     cursor: pointer;
     border-width: 0;
     text-decoration: none;
@@ -189,22 +190,30 @@
     text-decoration: none;
 }
 .footer {
-    position: absolute;
-    bottom: 0;
-    height: 200px;
+    min-height: 200px;
     width: 100%;
-    /*overflow: hidden;*/
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-content: center;
     text-align: center;
     border-top: 4px solid black;
 }
-.footer a {
+.footer-absolute {
+    position: absolute;
+    bottom: 0;
+    min-height: 200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    text-align: center;
+    border-top: 4px solid black;
+}
+.footer a, .footer-absolute a {
     text-decoration: none;
     color: inherit;
 }
-.footer a:hover {
+.footer a:hover, .footer-absolute a:hover {
     color: inherit;
 }
 .footer-icon {
@@ -245,4 +254,15 @@
 }
 .volkorn {
     font-family: "Volkorn";
+}
+.scrollBar {
+    overflow-y: scroll;
+    max-height: 150px;
+}
+.hidden-content {
+    display: none;
+}
+.empty-div {
+    height: 800px;
+    background: white;
 }
