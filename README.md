@@ -4,6 +4,7 @@
 News website that gets information from single news api and rss feeds<br>
 of different websites.
 
+[website](https://worldnews.netlify.com/World)
 ## Capabilities of website
 
 You can find information from various categories. Homepage includes 5 different categories<br>
