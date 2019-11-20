@@ -7,7 +7,7 @@ of different websites.
 [website](https://worldnews.netlify.com/World)
 ## Capabilities of website
 
-You can find information from various categories. Homepage includes 5 different categories<br>
+You can find information on various topics. Homepage includes 5 different categories<br>
 which I believe are most relevant and can be found in major news outlets. Using country selector<br>
 you can choose between all topics that [News API](https://newsapi.org) provides.
 
